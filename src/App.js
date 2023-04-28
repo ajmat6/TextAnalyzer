@@ -2,16 +2,16 @@
 // import "./App.css";
 import react, { useState } from 'react'
 import Navbar from "./components/Navbar";
-// import About from "./components/About";
+import About from "./components/About";
 import TextForm from "./components/TextForm";
-// import Alert from './components/Alert';
-// import { createRoot } from "react-dom/client";
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-//   Link,
-// } from "react-router-dom";
+import Alert from './components/Alert';
+//React router dom
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 
 function App() {
   const [mode, setmode] = useState('light'); //Wheather dark mode is enabled or not
@@ -50,33 +50,23 @@ function App() {
     <>
       {/* If props values are not passed, then it will take defaultProps values */}
       {/* passing mode in the navbar. */}
-      {/* <Router> */}
+      <BrowserRouter>
       <Navbar title="TextAnalyzer" aboutme="About Us" mode={mode} changeMode={changeMode} />
-      {/* <Alert alert={alert} /> */}
+      <Alert alert={alert} />
 
 
       <div className="container">
         {/* Passing showalert function as a prop in the Textform component */}
-        <TextForm heading="Enter the text" mode={mode} showalert={showalert} />
-        {/* <About /> */}
-        {/* <BrowserRouter>
+        {/* <TextForm heading="Enter the text" mode={mode} showalert={showalert} />
+        <About /> */}
         <Routes>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/">
-          <TextForm heading="Enter the text" mode={mode} showalert={showalert} />
-        </Route>
+            <Route path="/about" element={<About />}/>    
+            <Route path="/" element={<TextForm heading="Enter the text" mode={mode} showalert={showalert} />}/> 
         </Routes>
-        </BrowserRouter> */}
       </div>
-      {/* </Router> */}
+      </BrowserRouter>
     </>
   );
 }
-
-// createRoot(document.getElementById("root")).render(
-//   <RouterProvider router={router} />
-// );
 
 export default App;
