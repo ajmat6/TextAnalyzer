@@ -63,17 +63,17 @@ export default function TextForm(props) {
               {/* in style we are changing the color of the textarea on the change of the mode. */}
               <textarea className="form-control" id="exampleFormControlTextarea1" style={{backgroundColor: props.mode === 'dark'?'#282c34':'white', color: props.mode === 'dark'?'white':'black'}} value={text} onClick={textareaClick}  onChange={handleOnChange} rows="8"></textarea>
           </div>
-          <button type="submit" className="btn btn-primary" onClick={upperCase}>Convert to UpperCase</button>
-          <button type="submit" className="btn btn-primary mx-3" onClick={lowerCase}>Convert to LowerCase</button>
-          <button type="submit" className="btn btn-primary mx-3" onClick={speak}>Play Sound of Entered Text</button>
-          <button type="submit" className="btn btn-primary mx-3" onClick={copy}>Copy the Entered Text</button>
-          <button type="submit" className="btn btn-primary mx-3" onClick={HandleExtraSpaces}>Remove Extra Spaces</button>
+          <button type="submit" className="btn btn-primary mx-3 my-1" onClick={upperCase}>Convert to UpperCase</button>
+          <button type="submit" className="btn btn-primary mx-3 my-1" onClick={lowerCase}>Convert to LowerCase</button>
+          <button type="submit" className="btn btn-primary mx-3 my-1" onClick={speak}>Play Sound of Entered Text</button>
+          <button type="submit" className="btn btn-primary mx-3 my-1" onClick={copy}>Copy the Entered Text</button>
+          <button type="submit" className="btn btn-primary mx-3 my-1" onClick={HandleExtraSpaces}>Remove Extra Spaces</button>
       </form>
     </div>
 
     <div className="container my-3" style={{color: props.mode === 'dark'?'white':'black'}}>
       <h2>Entered Text Summary</h2>
-      <p>{text.split(" ").filter((Element) => {return Element.length!=0}).length} Words and {text.length} Characers</p>
+      <p>{text.split(" ").filter((Element) => {return Element.length!==0}).length} Words and {text.length} Characers</p>
       <p>The Entered Text can be read in {text.split(" ").length * 0.008} Minutes</p>
       <h2>Preview</h2>
       {/* Preview basic js logic */}
