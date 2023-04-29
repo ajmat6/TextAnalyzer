@@ -2,7 +2,7 @@
 // import "./App.css";
 import react, { useState } from 'react'
 import Navbar from "./components/Navbar";
-// import About from "./components/About";
+import About from "./components/About";
 import TextForm from "./components/TextForm";
 import Alert from './components/Alert';
 //React router dom
@@ -57,8 +57,8 @@ function App() {
 
       <div className="container">
         {/* Passing showalert function as a prop in the Textform component */}
-        <TextForm heading="Enter the text" mode={mode} showalert={showalert} />
-        {/* <About /> */}
+        {/* <TextForm heading="Enter the text" mode={mode} showalert={showalert} /> */}
+        <About mode={mode}/>
         {/* <Routes>
             <Route path="/about" element={<About />}/>    
             <Route path="/" element={<TextForm heading="Enter the text" mode={mode} showalert={showalert} />}/> 
