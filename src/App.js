@@ -57,8 +57,8 @@ function App() {
 
       <div className="container">
         {/* Passing showalert function as a prop in the Textform component */}
-        {/* <TextForm heading="Enter the text" mode={mode} showalert={showalert} /> */}
-        <About mode={mode}/>
+        <TextForm heading="Enter the text" mode={mode} showalert={showalert} />
+        {/* <About mode={mode}/> */}
         {/* <Routes>
             <Route path="/about" element={<About />}/>    
             <Route path="/" element={<TextForm heading="Enter the text" mode={mode} showalert={showalert} />}/> 
