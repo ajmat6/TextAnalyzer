@@ -63,11 +63,11 @@ export default function TextForm(props) {
               {/* in style we are changing the color of the textarea on the change of the mode. */}
               <textarea className="form-control" id="exampleFormControlTextarea1" style={{backgroundColor: props.mode === 'dark'?'#282c34':'white', color: props.mode === 'dark'?'white':'black'}} value={text} onClick={textareaClick}  onChange={handleOnChange} rows="8"></textarea>
           </div>
-          <button type="submit" className="btn btn-primary mx-3 my-1" onClick={upperCase}>Convert to UpperCase</button>
-          <button type="submit" className="btn btn-primary mx-3 my-1" onClick={lowerCase}>Convert to LowerCase</button>
-          <button type="submit" className="btn btn-primary mx-3 my-1" onClick={speak}>Play Sound of Entered Text</button>
-          <button type="submit" className="btn btn-primary mx-3 my-1" onClick={copy}>Copy the Entered Text</button>
-          <button type="submit" className="btn btn-primary mx-3 my-1" onClick={HandleExtraSpaces}>Remove Extra Spaces</button>
+          <button disabled={text.length===0} type="submit" className="btn btn-primary mx-3 my-1" onClick={upperCase}>Convert to UpperCase</button>
+          <button disabled={text.length===0} type="submit" className="btn btn-primary mx-3 my-1" onClick={lowerCase}>Convert to LowerCase</button>
+          <button disabled={text.length===0} type="submit" className="btn btn-primary mx-3 my-1" onClick={speak}>Play Sound of Entered Text</button>
+          <button disabled={text.length===0} type="submit" className="btn btn-primary mx-3 my-1" onClick={copy}>Copy the Entered Text</button>
+          <button disabled={text.length===0} type="submit" className="btn btn-primary mx-3 my-1" onClick={HandleExtraSpaces}>Remove Extra Spaces</button>
       </form>
     </div>
 
