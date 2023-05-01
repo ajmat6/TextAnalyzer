@@ -28,8 +28,19 @@ function App() {
     }, 2000);
   }
 
+  const removeclassList = () => {
+    document.body.classList.remove('light');
+    document.body.classList.remove('dark');
+    document.body.classList.remove('success');
+    document.body.classList.remove('warning');
+    document.body.classList.remove('danger');
+  }
+
   // changeMode function:
-  const changeMode = (e) => {
+  const changeMode = (cls) => {
+    console.log(cls); //will show theme name in console
+    removeclassList();
+    document.body.classList.add('bg-' + cls);
     if (mode === 'light') {
       setmode('dark');
       //Because this changeMode function is in App.js, therfore its body is whole website body so we can change its background color from here easily.
