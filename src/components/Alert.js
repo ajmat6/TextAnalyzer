@@ -13,7 +13,7 @@ export default function Alert(props) {
     //below div is used to solve alert component shifting the layout:
 
     <div style={{height: '50px'}}>
-{        props.alert &&<div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
+            {props.alert &&<div className={`alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
             <strong className='text-center'>{capitalize(props.alert.type)}</strong> : {props.alert.msg}
         </div>}
     </div>
